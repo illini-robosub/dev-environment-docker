@@ -29,6 +29,7 @@ WORKDIR /home/dockeruser
 # ENVs
 ENV HOME=/home/dockeruser
 ENV PATH="/home/dockeruser/.local/bin:${PATH}"
+ENV TEST=host.docker.internal:0.0
 
 # Force Python stdout and stderr streams to be unbuffered.
 ENV PYTHONUNBUFFERED 1
