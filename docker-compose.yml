@@ -2,6 +2,8 @@ version: "3.8"
 
 services:
   ros2:
+    env_file:
+      - main.env
     build:
       context: docker/ros2
       args:
@@ -10,12 +12,13 @@ services:
 
     # Enabling GPU access with Compose
     # https://docs.docker.com/compose/gpu-support/
-    # deploy:
-    #   resources:
-    #     reservations:
-    #       devices:
-    #          - capabilities: [gpu]
-    #            count: all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
 
     environment:
       # Set a fancy prompt (See ~/.bashrc in the container)
@@ -23,7 +26,7 @@ services:
 
       # WSLg settings
       # https://www.reddit.com/r/bashonubuntuonwindows/comments/n2nthu/can_i_use_the_new_wslg_with_docker/
-      - DISPLAY
+      # - DISPLAY
       - WAYLAND_DISPLAY
       - XDG_RUNTIME_DIR
       - PULSE_SERVER

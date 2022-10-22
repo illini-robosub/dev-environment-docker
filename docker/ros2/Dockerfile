@@ -8,7 +8,7 @@ FROM osrf/ros:galactic-desktop
 ARG user_id=1000
 ARG ros_ws=/home/dockeruser/dev_ws
 
-ENV DEBIAN_FRONTEND=noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 
 # Install packages.
 RUN apt-get update && apt-get install -y \
@@ -29,7 +29,6 @@ WORKDIR /home/dockeruser
 # ENVs
 ENV HOME=/home/dockeruser
 ENV PATH="/home/dockeruser/.local/bin:${PATH}"
-ENV TEST=host.docker.internal:0.0
 
 # Force Python stdout and stderr streams to be unbuffered.
 ENV PYTHONUNBUFFERED 1
