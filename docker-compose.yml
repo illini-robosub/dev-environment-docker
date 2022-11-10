@@ -12,13 +12,14 @@ services:
 
     # Enabling GPU access with Compose
     # https://docs.docker.com/compose/gpu-support/
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [ gpu ]
+    # uncomment if you have an Nvidia GPU
+#     deploy:
+#       resources:
+#         reservations:
+#           devices:
+#             - driver: nvidia
+#               count: 1
+#               capabilities: [ gpu ]
 
     environment:
       # Set a fancy prompt (See ~/.bashrc in the container)
