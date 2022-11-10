@@ -1,5 +1,9 @@
 # Docker-ROS2
 
+## Detailed Installation Guide:
+
+https://uillinoisedu.sharepoint.com/:w:/s/IlliniRoboSub/EZky2T55UYhMgWqxxMFJpgsBaEKkZ7MHVidLo6sqFpSniQ?e=4G30Mx
+
 ## What is this?
 
 * A Docker container for ROS2 and Gazebo.
